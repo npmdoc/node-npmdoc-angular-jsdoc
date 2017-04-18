@@ -1,1 +1,39 @@
-{     "devDependencies": {         "angular-jsdoc": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-angular-jsdoc",     "homepage": "https://github.com/npmdoc/node-npmdoc-angular-jsdoc",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-angular-jsdoc.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [angular-jsdoc (v1.5.0)](https://github.com/allenhwkim/angular-jsdoc#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-angular-jsdoc.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-angular-jsdoc) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-angular-jsdoc.svg)](https://travis-ci.org/npmdoc/node-npmdoc-angular-jsdoc)",
+    "devDependencies": {
+        "angular-jsdoc": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-angular-jsdoc",
+    "keywords": [
+        "documentation",
+        "angular-jsdoc"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_angular_jsdoc.js",
+    "name": "npmdoc-angular-jsdoc",
+    "nameAlias": "npmdoc_angular_jsdoc",
+    "nameOriginal": "npmdoc-angular-jsdoc",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-angular-jsdoc.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
