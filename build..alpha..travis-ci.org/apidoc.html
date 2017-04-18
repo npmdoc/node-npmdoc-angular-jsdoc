@@ -1,0 +1,153 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/allenhwkim/angular-jsdoc#readme"
+
+    >angular-jsdoc (v1.5.0)</a>
+</h1>
+<h4>JsDoc Plugin and Template for AngularJs</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.angular-jsdoc">module angular-jsdoc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.angular-jsdoc.angular-jsdoc">
+            function <span class="apidocSignatureSpan"></span>angular-jsdoc
+            <span class="apidocSignatureSpan">(dirs, optionsArg, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.angular-jsdoc.toString">
+            function <span class="apidocSignatureSpan">angular-jsdoc.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.angular-jsdoc" id="apidoc.module.angular-jsdoc">module angular-jsdoc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.angular-jsdoc.angular-jsdoc" id="apidoc.element.angular-jsdoc.angular-jsdoc">
+        function <span class="apidocSignatureSpan"></span>angular-jsdoc
+        <span class="apidocSignatureSpan">(dirs, optionsArg, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">angular-jsdoc = function (dirs, optionsArg, callback) {
+  optionsArg = optionsArg || {};
+  dirs = Array.isArray(dirs) ? dirs : dirs.split(&#x22; &#x22;);
+
+  //default values
+  var command = optionsArg.command || util.format(&#x22;node %s&#x22;, path.join(&#x22;node_modules&#x22;, &#x22;jsdoc&#x22;, &#x22;jsdoc.js&#x22;));
+
+  var options = extend({
+    configure: path.join(__dirname, &#x22;common&#x22;, &#x22;conf.json&#x22;),
+    template: path.join(__dirname, &#x22;default&#x22;),
+    destination: &#x22;docs&#x22;,
+    readme: &#x27;README.md&#x27;
+  }, optionsArg);
+
+  // if given template a single word including dash
+  if (optionsArg.template &#x26;&#x26; optionsArg.template.match(/^[\w-]+$/i)) {
+    options.template = path.join(__dirname, optionsArg.template);
+  };
+
+  var args = [
+    &#x27;--configure&#x27;, options.configure,
+    &#x27;--template&#x27;, options.template,
+    &#x27;--destination&#x27;, options.destination,
+    &#x27;--readme&#x27;, options.readme
+  ];
+  args = args.concat([&#x27;--recurse&#x27;]).concat(dirs);
+  runCommand(command, args).then(function(output) {
+    callback &#x26;&#x26; callback(output);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.angular-jsdoc.toString" id="apidoc.element.angular-jsdoc.toString">
+        function <span class="apidocSignatureSpan">angular-jsdoc.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
